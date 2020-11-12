@@ -29,6 +29,16 @@ class QuestionCard extends Component {
     componentDidMount = () => {
         this.getQuizQuestion()
     }
+    handleClick = (event) => {
+        console.log(event)
+        console.log(event.target.innerHTML)
+        if (event.target.innerHTML === this.state.questionInfo.correct_answer) {
+            alert('Yayyyyy')
+        }
+        else {
+            alert('uh oh')
+        }
+    }
 
     render() {
         return (
@@ -40,7 +50,7 @@ class QuestionCard extends Component {
                             {this.state.questionInfo.question}
                         </CardContent>
                         <CardActions>
-                            {this.state.answerOptions.map(answerOption => <AnswerOption answerOption={answerOption} />)}
+                            {this.state.answerOptions.map(answerOption => <AnswerOption answerOption={answerOption} handleClick={this.handleClick} />)}
                         </CardActions>
                     </Card>
                 </Container>

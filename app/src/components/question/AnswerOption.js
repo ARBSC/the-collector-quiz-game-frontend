@@ -1,10 +1,10 @@
 import React from 'react'
 import { Card, CardContent } from '@material-ui/core';
 
-const AnswerOption = ({answerOption}) =>  {
+const AnswerOption = ({answerOption, handleClick}) =>  {
     
     return (
-        <div>
+        <div onClick={(event) => handleClick(event)}>
             <Card>
                 <CardContent>
                     {answerOption}
